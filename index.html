@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a1a5d18a86.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Countries Data</title>
+  </head>
+  <body>
+    <header>
+      <div class="head-row">
+        <div class="head-col">
+          <h2 class="head-heading">Where in the world?</h2>
+        </div>
+        <div class="head-col theme-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="moon"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
+            />
+          </svg>
+          <span class="theme"> Light Mode</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="section1 sec1-row">
+        <div class="sec1-col search-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="search"
+            viewBox="0 0 512 512"
+          >
+            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+            />
+          </svg>
+          <input
+            type="text"
+            class="search-country"
+            placeholder="Search for a country..."
+          />
+        </div>
+        <div class="sec1-col filter-div">
+          <select name="regions" id="area-region">
+            <option value="region">Filter by Region</option>
+            <option value="Africa">Africa</option>
+            <option value="americas">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
+      </div>
+      <div class="country-detail">
+        <button class="btn back-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="back-arrow"
+            viewBox="0 0 448 512"
+          >
+            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+            />
+          </svg>
+          back
+        </button>
+        <div class="country-info-row">
+          <div class="country-info-col">
+            <!-- <img src="flag.webp" class="big-flag" alt="country flag" /> -->
+          </div>
+          <div class="country-info-col">
+            <h2 class="country-name2"></h2>
+            <div class="country-detail-info">
+              <ul class="info-list detail-list">
+                <li class="info-item">
+                  Naitve Name: <span class="native-name"></span>
+                </li>
+                <li class="info-item">
+                  Population: <span class="population-value"></span>
+                </li>
+                <li class="info-item">
+                  Region: <span class="region-name"></span>
+                </li>
+                <li class="info-item">
+                  Sub Region:
+                  <span class="sub-region-name"> </span>
+                </li>
+                <li class="info-item">
+                  Capital: <span class="capital-name"></span>
+                </li>
+              </ul>
+              <ul class="info-list detail-list">
+                <li class="info-item">
+                  Top Level Domain:
+                  <span class="domain-name"> Not Available</span>
+                </li>
+                <li class="info-item">
+                  Currencies: <span class="currency-name"></span>
+                </li>
+                <li class="info-item">
+                  Language: <span class="language-name"></span>
+                </li>
+              </ul>
+            </div>
+            <div class="border-div">
+              <h4>Border Countries:</h4>
+              <div class="countries"></div>
+              <!-- <button class="btn border-btn">India</button>
+              <button class="btn border-btn">Chine</button>
+              <button class="btn border-btn">Afganistan</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section2 sec2-row">
+        <!-- <div
+          class="country-card"
+          data-name="Pakistan"
+          onclick="detailShow(`Pakistan`)"
+        >
+          <img src="flag.webp" alt="flag" class="country-flag" />
+          <h3 class="country-name">Pakistan</h3>
+          <div class="country-info">
+            <ul class="info-list">
+              <li class="info-item">
+                Population: <span class="pop-value">192,38494830</span>
+              </li>
+              <li class="info-item">
+                Region: <span class="region-value">Asia</span>
+              </li>
+              <li class="info-item">
+                Capital: <span class="capital-value">Islamabad</span>
+              </li>
+            </ul>
+          </div>
+        </div> -->
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
