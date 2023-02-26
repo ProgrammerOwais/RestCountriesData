@@ -10,8 +10,8 @@
 
 ### Links
 
-- Code URL: [Add solution URL here](https://github.com/ProgrammerOwais/RestCountriesData)
-- Live Site URL: [Add live site URL here](https://programmerowais.github.io/RestCountriesData.github.io/)
+- Code URL: [Visit Code](https://github.com/ProgrammerOwais/RestCountriesData)
+- Live Site URL: [Visit Site](https://programmerowais.github.io/RestCountriesData.github.io/)
 
 ## My process
 
