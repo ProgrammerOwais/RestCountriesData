@@ -1,11 +1,11 @@
 // Theme changing functionality
-(function () {
+function autoexectute() {
   if (localStorage.getItem("theme") == "light-theme") {
     setTheme("light-theme");
   } else {
     setTheme("dark-theme");
   }
-});
+}
 let themeText = document.querySelector(".theme");
 let themeChange = document.querySelector(".theme-div");
 themeChange.addEventListener("click", () => {
@@ -26,8 +26,12 @@ function toggleTheme() {
     themeText.innerText = "Light Mode";
   }
 }
+autoexectute();
 
 //**************************Theme section is ended */
+
+let loader = document.querySelector(".loader");
+loader.style.display = "flex";
 
 //**************** Main elements used in the page */
 let countryDiv = document.querySelector(".section2");
@@ -64,22 +68,28 @@ region.addEventListener("click", () => {
 let search = document.querySelector(".search");
 let searchInput = document.querySelector(".search-country");
 search.addEventListener("click", () => {
+  loader.style.display = "flex";
   searchCountry();
 });
 // ******** by pressing entery key word on input field
 searchInput.addEventListener("keypress", (event) => {
   if (event.key == "Enter") {
+    loader.style.display = "flex";
     searchCountry();
   }
 });
 window.onload = function () {
+  loader.style.display = "flex";
   allCountries();
 };
 
 // get the all countries detail
+
+// document.querySelector("body").style.backgroundColor = "blue";
 function allCountries() {
   fetch(`https://restcountries.com/v2/all`)
     .then((res) => {
+      loader.style.display = "none";
       return res.json();
     })
     .then((countryData) => {
@@ -202,6 +212,7 @@ function searchCountry() {
   console.log("it just worked");
   fetch(`https://restcountries.com/v3.1/name/${searchInput.value}`)
     .then((res) => {
+      loader.style.display = "none";
       return res.json();
     })
     .then((countryData) => {
@@ -351,6 +362,7 @@ function regionCountries() {
   for (let i = 0; i < region.options.length; i++) {
     if (region.options[i].selected) {
       if (region.options[i].value != selectedText) {
+        loader.style.display = "flex";
         // if the detail page is open, hide it
         countryDetail.style.display = "none";
         mainSec.style.display = "grid";
@@ -358,6 +370,7 @@ function regionCountries() {
         selectedText = region.options[i].value;
         fetch(`https://restcountries.com/v3.1/region/${selectedText}`)
           .then((res) => {
+            loader.style.display = "none";
             return res.json();
           })
           .then((countryData) => {

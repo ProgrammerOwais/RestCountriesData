@@ -31,6 +31,55 @@ body {
   overflow-x: none;
   color: var(--mainTextColor);
 }
+/************************** Loader ********************/
+
+.loader {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: var(--secondaryColor);
+  display: none;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  background-color: transparent;
+  border: 8px solid var(--secondText);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) forwards infinite;
+  border-color: var(--secondText) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 header {
   /* width: 1200px; */
   /* margin: 0 auto; */
@@ -109,6 +158,7 @@ main {
   /* border: 1px solid red; */
   width: 100%;
   max-width: 20px;
+  cursor: pointer;
   /* fill: var(--primaryColor); */
   fill: var(--mainTextColor);
   background-color: var(--primaryColor);
@@ -128,6 +178,7 @@ main {
   border-radius: 5px;
   outline: none;
   color: var(--mainTextColor);
+  cursor: pointer;
 }
 
 option {
@@ -169,7 +220,7 @@ option {
   border-radius: 5px;
   width: 100%;
   max-width: 100%;
-  box-shadow: 0px 0px 2px 0.05px var(--mainTextColor);
+  box-shadow: 0px 0px 1px 0.05px var(--mainTextColor);
 }
 .country-name {
   margin-top: 1rem;
