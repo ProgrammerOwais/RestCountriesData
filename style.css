@@ -30,6 +30,20 @@ body {
   background-color: var(--secondaryColor);
   overflow-x: none;
   color: var(--mainTextColor);
+  min-height: 150vh;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primaryColor);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondaryColor);
+}
+::-webkit-scrollbar-track {
+  background-color: var(--secondText);
 }
 /************************** Loader ********************/
 
